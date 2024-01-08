@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on Jinho Yu</title>
+        <link>https://tteoks.github.io/tags/</link>
+        <description>Recent content in Tags on Jinho Yu</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Mon, 08 Jan 2024 17:07:24 +0900</lastBuildDate><atom:link href="https://tteoks.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>other</title>
+        <link>https://tteoks.github.io/tags/other/</link>
+        <pubDate>Mon, 08 Jan 2024 17:07:24 +0900</pubDate>
+        
+        <guid>https://tteoks.github.io/tags/other/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>markdown</title>
+        <link>https://tteoks.github.io/tags/markdown/</link>
+        <pubDate>Fri, 05 Jan 2024 16:31:08 +0900</pubDate>
+        
+        <guid>https://tteoks.github.io/tags/markdown/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>themes</title>
+        <link>https://tteoks.github.io/tags/themes/</link>
+        <pubDate>Fri, 05 Jan 2024 16:31:08 +0900</pubDate>
+        
+        <guid>https://tteoks.github.io/tags/themes/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
