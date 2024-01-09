@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Mon, 08 Jan 2024 17:07:24 +0900</lastBuildDate><atom:link href="https://tteoks.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 09 Jan 2024 11:33:27 +0900</lastBuildDate><atom:link href="https://tteoks.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Computer Science</title>
+        <link>https://tteoks.github.io/categories/computer-science/</link>
+        <pubDate>Tue, 09 Jan 2024 11:33:27 +0900</pubDate>
+        
+        <guid>https://tteoks.github.io/categories/computer-science/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>other</title>
         <link>https://tteoks.github.io/categories/other/</link>
         <pubDate>Mon, 08 Jan 2024 17:07:24 +0900</pubDate>
