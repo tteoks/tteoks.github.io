@@ -4,6 +4,8 @@
   <url>
     <loc>https://tteoks.github.io/</loc>
     <lastmod>2024-01-10T16:36:53+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -17,9 +19,13 @@
   </url><url>
     <loc>https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/</loc>
     <lastmod>2024-01-10T16:36:53+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/categories/</loc>
     <lastmod>2024-01-10T16:36:53+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -33,18 +39,28 @@
   </url><url>
     <loc>https://tteoks.github.io/tags/computer-science/</loc>
     <lastmod>2024-01-10T16:36:53+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/categories/computer-science/</loc>
     <lastmod>2024-01-10T16:36:53+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/tags/data-structure/</loc>
     <lastmod>2024-01-10T16:36:53+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/post/</loc>
     <lastmod>2024-01-10T16:36:53+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/tags/</loc>
     <lastmod>2024-01-10T16:36:53+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -58,25 +74,41 @@
   </url><url>
     <loc>https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-stack-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/</loc>
     <lastmod>2024-01-09T11:33:27+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/p/first-post/</loc>
     <lastmod>2024-01-08T17:07:24+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/tags/other/</loc>
     <lastmod>2024-01-08T17:07:24+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/categories/other/</loc>
     <lastmod>2024-01-08T17:07:24+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/about/</loc>
     <lastmod>2024-01-08T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/page/</loc>
     <lastmod>2024-01-08T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://tteoks.github.io/search/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
