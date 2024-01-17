@@ -6,8 +6,120 @@
         <description>Recent content in Computer Science on Jinho Yu</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <copyright>Example Person</copyright>
-        <lastBuildDate>Wed, 10 Jan 2024 16:36:53 +0900</lastBuildDate><atom:link href="https://tteoks.github.io/tags/computer-science/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>COPYRIGHT (C) JINHO,YU. ALL RIGHTS RESERVED.</copyright>
+        <lastBuildDate>Wed, 17 Jan 2024 14:02:48 +0900</lastBuildDate><atom:link href="https://tteoks.github.io/tags/computer-science/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[자료구조] Linked List 개념 정리</title>
+        <link>https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-linked-list-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/</link>
+        <pubDate>Wed, 17 Jan 2024 14:02:48 +0900</pubDate>
+        
+        <guid>https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-linked-list-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/</guid>
+        <description>&lt;h1 id=&#34;연결-리스트-linked-list&#34;&gt;연결 리스트 (Linked List)&lt;/h1&gt;
+&lt;p&gt;추상적 자료형인 리스트를 구현한 자료구조로, 데이터 덩어리 (이하 Node)들이 연결된 선형 자료구조이다. 각 노드는 데이터와 다음 노드를 가리키는 링크 (포이터)로 이루어져 있다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tteoks.github.io/img/cs_linked-list.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Linked List&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;본 포스팅은 Singly linked list를 기반으로 설명한다.&lt;/p&gt;
+&lt;h3 id=&#34;특징&#34;&gt;특징&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;연속되는 항목들이 포인터로 연결되어 있음&lt;/li&gt;
+&lt;li&gt;데이터의 크기 제한이 없음 (데이터 추가/삭제 쉬움)&lt;/li&gt;
+&lt;li&gt;데이터를 탐색할 때 순차적으로 접근해야 함&lt;/li&gt;
+&lt;li&gt;메모리를 필요한 만큼만 사용하지만, 포인터로 인한 추가 메모리 필요&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;주요-함수&#34;&gt;주요 함수&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;add: List 끝에 데이터 삽입&lt;/li&gt;
+&lt;li&gt;insert: N번째 위치에 데이터삽입&lt;/li&gt;
+&lt;li&gt;delete: List 끝에 데이터 삭제&lt;/li&gt;
+&lt;li&gt;search: list 속에 데이터가 있는지 확인&lt;/li&gt;
+&lt;li&gt;getData: N번째 노드의 값을 반환&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;리스트-vs-배열&#34;&gt;리스트 vs 배열&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;항목&lt;/th&gt;
+&lt;th&gt;배열&lt;/th&gt;
+&lt;th&gt;리스트&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;특정 자료 Read&lt;/td&gt;
+&lt;td&gt;쉬움&lt;/td&gt;
+&lt;td&gt;어려움&lt;/td&gt;
+&lt;td&gt;배열은 index로 특정 자료 불러내기가 용이함&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;데이터 크기 변경&lt;/td&gt;
+&lt;td&gt;어려움&lt;/td&gt;
+&lt;td&gt;쉬움&lt;/td&gt;
+&lt;td&gt;배열은 선언 시, 연속된 메모리 공간을 할당함&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;탐색과 정렬을 자주하는 자료형인 경우 -&amp;gt; 배열&lt;/li&gt;
+&lt;li&gt;추가/삭제가 많이 일어나는 자료형인 경우 -&amp;gt; 리스트&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Linked-List 종류 3가지&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;단순 연결 리스트 (Singly Linked List)
+&lt;ul&gt;
+&lt;li&gt;다음 노드에 대한 참조만을 가진 가장 단순한 형태의 연결 리스트&lt;/li&gt;
+&lt;li&gt;체인이 잘못되 다음 Node를 못찾는 경우, 그 뒤 Node들은 모두 유실&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;이중 연결 리스트 (Doubly Linked List)
+&lt;ul&gt;
+&lt;li&gt;다음 노드, 이전 노드에 대한 참조를 가진 형태의 연결 리스트&lt;/li&gt;
+&lt;li&gt;뒤로 Node 탐색 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;순환 연결 리스트 (Circular Linked List)
+&lt;ul&gt;
+&lt;li&gt;단순 연결 리스트에서 마지막 Node가 Null 대신, 처음 원소를 가리키는 형태&lt;/li&gt;
+&lt;li&gt;스트림 버퍼 구현에 많이 사용 되고, 메모리 재사용 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;장점&#34;&gt;장점&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;자료의 삽입과 삭제가 용이함&lt;/li&gt;
+&lt;li&gt;삽입/삭제 작업 시, 자료의 이동이 불필요함&lt;/li&gt;
+&lt;li&gt;자료형 크기를 유동적으로 할당/제거 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;단점&#34;&gt;단점&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;순차적으로 접근해야 해서, 특정 인덱스에 접근하기 까다로움&lt;/li&gt;
+&lt;li&gt;포인터 사용으로 인한 메모리 추가 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;복잡도&#34;&gt;복잡도&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;삽입: O(1) 또는 O(n) (삽입 위치에 따라)&lt;/li&gt;
+&lt;li&gt;삭제: O(1) 또는 O(n) (삭제 위치에 따라)&lt;/li&gt;
+&lt;li&gt;검색: O(n)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;활용&#34;&gt;활용&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;자료형의 크기가 정해져 있지 않은 경우&lt;/li&gt;
+&lt;li&gt;데이터의 삽입/삭제가 자주 일어나는 경우&lt;/li&gt;
+&lt;li&gt;데이터 검색이 자주 일어나지 않는 경우&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Linked List는 메모리를 효율적으로 활용하면서, 동적으로 크기 조절이 가능한 자료구조이다.
+삽입과 삭제가 빈번하게 발생하는 상황에서 유용하게 사용될 수 있다.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>[자료구조] Queue 개념 정리</title>
         <link>https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/</link>
         <pubDate>Wed, 10 Jan 2024 16:36:53 +0900</pubDate>
