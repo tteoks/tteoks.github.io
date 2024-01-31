@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Queue의 개념 자료 구조에서 한 쪽 끝에서 자료가 들어오고, 반대 쪽 끝에서 자료가 나가는 선입 선출 특성의 FIFO (First In First Out) 선형 자료구조
-특징 선입 선출 (FIFO) 구조로 가장 먼저 추가된 데이터가 가장 먼저 제거됨 스택에서 데이터 추가 및 삭제하는 연산이 다른 자료구조에 비해 빠름 n번째 항목에 직접 접근 할 수 없음 배열처럼 원소들을 하나씩 옆으로 밀어줄 수 없음 주요 연산 Enqueue 연산: Queue에 데이터를 추가한다. Dequeue 연산: Queue에서 데이터를 제거한다.'>
-<title>[자료구조] Queue 개념 정리</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='덱 (Deque)의 개념 Deque은 양쪽 끝에서 데이터의 삽입과 삭제가 가능한 선형자료구조로, Double-Ended Queue의 약자이다.
+특징 Deque는 양쪽 끝에서 삽입과 삭제가 이루어질 수 있음 동적으로 자료구조의 크기를 조절 가능 주요 연산 AddFront 연산: Deque의 앞에 데이터를 추가 AddRear 연산: Deque의 뒤에 데이터를 추가 RemoveFront 연산: Deque의 앞의 데이터를 삭제 RemoveRear 연산: Deque의 뒤의 데이터를 삭제 장점 양쪽 끝에서 효율적으로 삽입과 삭제를 O(1)에 수행할 수 있음 Queue와 Stack의 특성을 모두 가지고 있어 다양한 상황에서 활용 가능 단점 배열 기반 구현의 경우, 메모리를 일정하게 할당해야 해서 낭비 발생 가능 양쪽 끝에서 연산을 모두 지원하므로, 구현이 복잡할 수 있음 복잡도 앞/뒤 삽입: O(1) 앞/뒤 삭제: O(1) 활용 스크롤링 목록'>
+<title>[자료구조] Deque 개념 정리</title>
 
-<link rel='canonical' href='https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/'>
+<link rel='canonical' href='https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-deque-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/'>
 
-<link rel="stylesheet" href="/scss/style.min.3f9051b37d976722d4adc793818835fd8e91a93aff0f48db9968cb38c4f32b2d.css"><meta property='og:title' content='[자료구조] Queue 개념 정리'>
-<meta property='og:description' content='Queue의 개념 자료 구조에서 한 쪽 끝에서 자료가 들어오고, 반대 쪽 끝에서 자료가 나가는 선입 선출 특성의 FIFO (First In First Out) 선형 자료구조
-특징 선입 선출 (FIFO) 구조로 가장 먼저 추가된 데이터가 가장 먼저 제거됨 스택에서 데이터 추가 및 삭제하는 연산이 다른 자료구조에 비해 빠름 n번째 항목에 직접 접근 할 수 없음 배열처럼 원소들을 하나씩 옆으로 밀어줄 수 없음 주요 연산 Enqueue 연산: Queue에 데이터를 추가한다. Dequeue 연산: Queue에서 데이터를 제거한다.'>
-<meta property='og:url' content='https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/'>
+<link rel="stylesheet" href="/scss/style.min.3f9051b37d976722d4adc793818835fd8e91a93aff0f48db9968cb38c4f32b2d.css"><meta property='og:title' content='[자료구조] Deque 개념 정리'>
+<meta property='og:description' content='덱 (Deque)의 개념 Deque은 양쪽 끝에서 데이터의 삽입과 삭제가 가능한 선형자료구조로, Double-Ended Queue의 약자이다.
+특징 Deque는 양쪽 끝에서 삽입과 삭제가 이루어질 수 있음 동적으로 자료구조의 크기를 조절 가능 주요 연산 AddFront 연산: Deque의 앞에 데이터를 추가 AddRear 연산: Deque의 뒤에 데이터를 추가 RemoveFront 연산: Deque의 앞의 데이터를 삭제 RemoveRear 연산: Deque의 뒤의 데이터를 삭제 장점 양쪽 끝에서 효율적으로 삽입과 삭제를 O(1)에 수행할 수 있음 Queue와 Stack의 특성을 모두 가지고 있어 다양한 상황에서 활용 가능 단점 배열 기반 구현의 경우, 메모리를 일정하게 할당해야 해서 낭비 발생 가능 양쪽 끝에서 연산을 모두 지원하므로, 구현이 복잡할 수 있음 복잡도 앞/뒤 삽입: O(1) 앞/뒤 삭제: O(1) 활용 스크롤링 목록'>
+<meta property='og:url' content='https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-deque-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/'>
 <meta property='og:site_name' content='Jinho Yu'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Data Structure' /><meta property='article:tag' content='Computer Science' /><meta property='article:published_time' content='2024-01-10T16:36:53&#43;09:00'/><meta property='article:modified_time' content='2024-01-10T16:36:53&#43;09:00'/>
-<meta name="twitter:title" content="[자료구조] Queue 개념 정리">
-<meta name="twitter:description" content="Queue의 개념 자료 구조에서 한 쪽 끝에서 자료가 들어오고, 반대 쪽 끝에서 자료가 나가는 선입 선출 특성의 FIFO (First In First Out) 선형 자료구조
-특징 선입 선출 (FIFO) 구조로 가장 먼저 추가된 데이터가 가장 먼저 제거됨 스택에서 데이터 추가 및 삭제하는 연산이 다른 자료구조에 비해 빠름 n번째 항목에 직접 접근 할 수 없음 배열처럼 원소들을 하나씩 옆으로 밀어줄 수 없음 주요 연산 Enqueue 연산: Queue에 데이터를 추가한다. Dequeue 연산: Queue에서 데이터를 제거한다.">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Data Structure' /><meta property='article:tag' content='Computer Science' /><meta property='article:published_time' content='2024-01-31T14:23:51&#43;09:00'/><meta property='article:modified_time' content='2024-01-31T14:23:51&#43;09:00'/>
+<meta name="twitter:title" content="[자료구조] Deque 개념 정리">
+<meta name="twitter:description" content="덱 (Deque)의 개념 Deque은 양쪽 끝에서 데이터의 삽입과 삭제가 가능한 선형자료구조로, Double-Ended Queue의 약자이다.
+특징 Deque는 양쪽 끝에서 삽입과 삭제가 이루어질 수 있음 동적으로 자료구조의 크기를 조절 가능 주요 연산 AddFront 연산: Deque의 앞에 데이터를 추가 AddRear 연산: Deque의 뒤에 데이터를 추가 RemoveFront 연산: Deque의 앞의 데이터를 삭제 RemoveRear 연산: Deque의 뒤의 데이터를 삭제 장점 양쪽 끝에서 효율적으로 삽입과 삭제를 O(1)에 수행할 수 있음 Queue와 Stack의 특성을 모두 가지고 있어 다양한 상황에서 활용 가능 단점 배열 기반 구현의 경우, 메모리를 일정하게 할당해야 해서 낭비 발생 가능 양쪽 끝에서 연산을 모두 지원하므로, 구현이 복잡할 수 있음 복잡도 앞/뒤 삽입: O(1) 앞/뒤 삭제: O(1) 활용 스크롤링 목록">
     </head>
     <body class="
     article-page
@@ -271,6 +271,7 @@
   <ol>
     <li>
       <ol>
+        <li><a href="#덱-deque의-개념">덱 (Deque)의 개념</a></li>
         <li><a href="#특징">특징</a></li>
         <li><a href="#주요-연산">주요 연산</a></li>
         <li><a href="#장점">장점</a></li>
@@ -306,7 +307,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/">[자료구조] Queue 개념 정리</a>
+            <a href="/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-deque-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/">[자료구조] Deque 개념 정리</a>
         </h2>
     
         
@@ -328,7 +329,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jan 10, 2024</time>
+                <time class="article-time--published">Jan 31, 2024</time>
             </div>
         
 
@@ -358,54 +359,54 @@
     <section class="article-content">
     
     
-    <h1 id="queue의-개념">Queue의 개념</h1>
-<p>자료 구조에서 한 쪽 끝에서 자료가 들어오고, 반대 쪽 끝에서 자료가 나가는 선입 선출 특성의 FIFO (First In First Out) 선형 자료구조</p>
-<p><img src="/img/cs_queue.png"
+    <h3 id="덱-deque의-개념">덱 (Deque)의 개념</h3>
+<p>Deque은 양쪽 끝에서 데이터의 삽입과 삭제가 가능한 선형자료구조로, Double-Ended Queue의 약자이다.</p>
+<p><img src="/img/cs_deque.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="Queue"
+		alt="DeQue"
 	
 	
 ></p>
 <h3 id="특징">특징</h3>
 <ul>
-<li>선입 선출 (FIFO) 구조로 가장 먼저 추가된 데이터가 가장 먼저 제거됨</li>
-<li>스택에서 데이터 추가 및 삭제하는 연산이 다른 자료구조에 비해 빠름</li>
-<li>n번째 항목에 직접 접근 할 수 없음</li>
-<li>배열처럼 원소들을 하나씩 옆으로 밀어줄 수 없음</li>
+<li>Deque는 양쪽 끝에서 삽입과 삭제가 이루어질 수 있음</li>
+<li>동적으로 자료구조의 크기를 조절 가능</li>
 </ul>
 <h3 id="주요-연산">주요 연산</h3>
 <ul>
-<li>Enqueue 연산: Queue에 데이터를 추가한다.</li>
-<li>Dequeue 연산: Queue에서 데이터를 제거한다.</li>
-<li>Peak 연산: Queue의 맨 앞에 있는 데이터를 조회한다.</li>
-<li>isEmpty 연산: Queue가 비어 있는지 여부를 확인한다.</li>
+<li>AddFront 연산: Deque의 앞에 데이터를 추가</li>
+<li>AddRear 연산: Deque의 뒤에 데이터를 추가</li>
+<li>RemoveFront 연산: Deque의 앞의 데이터를 삭제</li>
+<li>RemoveRear 연산: Deque의 뒤의 데이터를 삭제</li>
 </ul>
 <hr>
 <h3 id="장점">장점</h3>
 <ul>
-<li>자료 구조가 단순하여 구현이 쉬움</li>
-<li>데이터 저장/읽기 속도가 빠름</li>
+<li>양쪽 끝에서 효율적으로 삽입과 삭제를 O(1)에 수행할 수 있음</li>
+<li>Queue와 Stack의 특성을 모두 가지고 있어 다양한 상황에서 활용 가능</li>
 </ul>
 <h3 id="단점">단점</h3>
 <ul>
-<li>데이터의 최대 개수가 사전에 정의되어야 함</li>
-<li>저장공간 낭비로 이어질 수 있음</li>
-<li>원하는 데이터에 직접 접근하기 어려움</li>
+<li>배열 기반 구현의 경우, 메모리를 일정하게 할당해야 해서 낭비 발생 가능</li>
+<li>양쪽 끝에서 연산을 모두 지원하므로, 구현이 복잡할 수 있음</li>
 </ul>
 <h3 id="복잡도">복잡도</h3>
 <ul>
-<li>삽입/삭제: O(1)</li>
+<li>앞/뒤 삽입: O(1)</li>
+<li>앞/뒤 삭제: O(1)</li>
 </ul>
 <h3 id="활용">활용</h3>
 <ul>
-<li>작업 대기열</li>
-<li>네트워크 패킷 처리</li>
-<li>너비 우선 탐색 (BFS)</li>
-<li>캐시 관리</li>
+<li>스크롤링 목록<br>
+사용자가 스크롤을 하면서 앞과 뒤에서 아이템을 추가하고 삭제할 때 사용</li>
+<li>이중 종료 조건의 큐(Queue)<br>
+양쪽에서 삽입과 삭제를 할 수 있는 특성을 이용하여 다양한 큐 구조를 구현</li>
+<li>회문(Palindrome) 검사<br>
+앞뒤에서 데이터를 비교하여 회문 여부를 확인할 때 활용</li>
 </ul>
 
 </section>
@@ -439,12 +440,12 @@
             
                 
 <article class="">
-    <a href="/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-deque-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/">
+    <a href="/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-linked-list-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">[자료구조] Deque 개념 정리</h2>
+            <h2 class="article-title">[자료구조] Linked List 개념 정리</h2>
         </div>
     </a>
 </article>
@@ -452,12 +453,12 @@
             
                 
 <article class="">
-    <a href="/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-linked-list-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/">
+    <a href="/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">[자료구조] Linked List 개념 정리</h2>
+            <h2 class="article-title">[자료구조] Queue 개념 정리</h2>
         </div>
     </a>
 </article>
