@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Queue의 개념 자료 구조에서 한 쪽 끝에서 자료가 들어오고, 반대 쪽 끝에서 자료가 나가는 선입 선출 특성의 FIFO (First In First Out) 선형 자료구조
-특징 선입 선출 (FIFO) 구조로 가장 먼저 추가된 데이터가 가장 먼저 제거됨 스택에서 데이터 추가 및 삭제하는 연산이 다른 자료구조에 비해 빠름 n번째 항목에 직접 접근 할 수 없음 배열처럼 원소들을 하나씩 옆으로 밀어줄 수 없음 주요 연산 Enqueue 연산: Queue에 데이터를 추가한다. Dequeue 연산: Queue에서 데이터를 제거한다.'>
-<title>[자료구조] Queue 개념 정리</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='정렬 주어진 데이터를 일정한 순서로 재배열하는 알고리즘으로 이러한 재배열을 통해 검색, 비교, 출력등의 작업을 효율적으로 수행할 수 있음
+버블 정렬 (Bubble Sort) 개념
+인접한 두 원소의 대소를 비교하여 순서가 잘못된 경우, 서로 교환하는 정렬 알고리즘
+동작 방식
+배열의 처음부터 끝까지 반복하여 인접한 두 원소의 대소를 비교해 정렬을 수행함
+특징
+구현이 간단하고, 코드 이해가 쉬웁 소규모 데이터 정렬에 간단하게 사용하기 용이 장/단점
+장점 추가적인 메모리 사용 X 단점 다른 정렬 알고리즘에 비해 비효율적 복잡도'>
+<title>[알고리즘] Sort 알고리즘</title>
 
-<link rel='canonical' href='https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/'>
+<link rel='canonical' href='https://tteoks.github.io/p/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-sort-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/'>
 
-<link rel="stylesheet" href="/scss/style.min.3f9051b37d976722d4adc793818835fd8e91a93aff0f48db9968cb38c4f32b2d.css"><meta property='og:title' content='[자료구조] Queue 개념 정리'>
-<meta property='og:description' content='Queue의 개념 자료 구조에서 한 쪽 끝에서 자료가 들어오고, 반대 쪽 끝에서 자료가 나가는 선입 선출 특성의 FIFO (First In First Out) 선형 자료구조
-특징 선입 선출 (FIFO) 구조로 가장 먼저 추가된 데이터가 가장 먼저 제거됨 스택에서 데이터 추가 및 삭제하는 연산이 다른 자료구조에 비해 빠름 n번째 항목에 직접 접근 할 수 없음 배열처럼 원소들을 하나씩 옆으로 밀어줄 수 없음 주요 연산 Enqueue 연산: Queue에 데이터를 추가한다. Dequeue 연산: Queue에서 데이터를 제거한다.'>
-<meta property='og:url' content='https://tteoks.github.io/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/'>
+<link rel="stylesheet" href="/scss/style.min.3f9051b37d976722d4adc793818835fd8e91a93aff0f48db9968cb38c4f32b2d.css"><meta property='og:title' content='[알고리즘] Sort 알고리즘'>
+<meta property='og:description' content='정렬 주어진 데이터를 일정한 순서로 재배열하는 알고리즘으로 이러한 재배열을 통해 검색, 비교, 출력등의 작업을 효율적으로 수행할 수 있음
+버블 정렬 (Bubble Sort) 개념
+인접한 두 원소의 대소를 비교하여 순서가 잘못된 경우, 서로 교환하는 정렬 알고리즘
+동작 방식
+배열의 처음부터 끝까지 반복하여 인접한 두 원소의 대소를 비교해 정렬을 수행함
+특징
+구현이 간단하고, 코드 이해가 쉬웁 소규모 데이터 정렬에 간단하게 사용하기 용이 장/단점
+장점 추가적인 메모리 사용 X 단점 다른 정렬 알고리즘에 비해 비효율적 복잡도'>
+<meta property='og:url' content='https://tteoks.github.io/p/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-sort-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/'>
 <meta property='og:site_name' content='Jinho Yu'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Data Structure' /><meta property='article:tag' content='Computer Science' /><meta property='article:published_time' content='2024-01-10T16:36:53&#43;09:00'/><meta property='article:modified_time' content='2024-01-10T16:36:53&#43;09:00'/>
-<meta name="twitter:title" content="[자료구조] Queue 개념 정리">
-<meta name="twitter:description" content="Queue의 개념 자료 구조에서 한 쪽 끝에서 자료가 들어오고, 반대 쪽 끝에서 자료가 나가는 선입 선출 특성의 FIFO (First In First Out) 선형 자료구조
-특징 선입 선출 (FIFO) 구조로 가장 먼저 추가된 데이터가 가장 먼저 제거됨 스택에서 데이터 추가 및 삭제하는 연산이 다른 자료구조에 비해 빠름 n번째 항목에 직접 접근 할 수 없음 배열처럼 원소들을 하나씩 옆으로 밀어줄 수 없음 주요 연산 Enqueue 연산: Queue에 데이터를 추가한다. Dequeue 연산: Queue에서 데이터를 제거한다.">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Algorithm' /><meta property='article:tag' content='Computer Science' /><meta property='article:published_time' content='2024-02-11T14:24:19&#43;09:00'/><meta property='article:modified_time' content='2024-02-11T14:24:19&#43;09:00'/>
+<meta name="twitter:title" content="[알고리즘] Sort 알고리즘">
+<meta name="twitter:description" content="정렬 주어진 데이터를 일정한 순서로 재배열하는 알고리즘으로 이러한 재배열을 통해 검색, 비교, 출력등의 작업을 효율적으로 수행할 수 있음
+버블 정렬 (Bubble Sort) 개념
+인접한 두 원소의 대소를 비교하여 순서가 잘못된 경우, 서로 교환하는 정렬 알고리즘
+동작 방식
+배열의 처음부터 끝까지 반복하여 인접한 두 원소의 대소를 비교해 정렬을 수행함
+특징
+구현이 간단하고, 코드 이해가 쉬웁 소규모 데이터 정렬에 간단하게 사용하기 용이 장/단점
+장점 추가적인 메모리 사용 X 단점 다른 정렬 알고리즘에 비해 비효율적 복잡도">
     </head>
     <body class="
     article-page
@@ -269,16 +287,14 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
-      <ol>
-        <li><a href="#특징">특징</a></li>
-        <li><a href="#주요-연산">주요 연산</a></li>
-        <li><a href="#장점">장점</a></li>
-        <li><a href="#단점">단점</a></li>
-        <li><a href="#복잡도">복잡도</a></li>
-        <li><a href="#활용">활용</a></li>
-      </ol>
-    </li>
+    <li><a href="#버블-정렬-bubble-sort">버블 정렬 (Bubble Sort)</a></li>
+    <li><a href="#삽입-정렬-insert-sort">삽입 정렬 (Insert Sort)</a></li>
+    <li><a href="#선택-정렬-select-sort">선택 정렬 (Select Sort)</a></li>
+    <li><a href="#퀵-정렬-quick-sort">퀵 정렬 (Quick Sort)</a></li>
+    <li><a href="#병합-정렬-merge-sort">병합 정렬 (Merge Sort)</a></li>
+    <li><a href="#힙-정렬-heap-sort">힙 정렬 (Heap Sort)</a></li>
+    <li><a href="#셸-정렬-shell-sort">셸 정렬 (Shell Sort)</a></li>
+    <li><a href="#기수-정렬-radix-sort">기수 정렬 (Radix Sort)</a></li>
   </ol>
 </nav>
         </div>
@@ -306,7 +322,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/">[자료구조] Queue 개념 정리</a>
+            <a href="/p/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-sort-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">[알고리즘] Sort 알고리즘</a>
         </h2>
     
         
@@ -328,7 +344,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jan 10, 2024</time>
+                <time class="article-time--published">Feb 11, 2024</time>
             </div>
         
 
@@ -343,7 +359,7 @@
 
 
                 <time class="article-time--reading">
-                    1 minute read
+                    4 minute read
                 </time>
             </div>
         
@@ -358,54 +374,273 @@
     <section class="article-content">
     
     
-    <h1 id="queue의-개념">Queue의 개념</h1>
-<p>자료 구조에서 한 쪽 끝에서 자료가 들어오고, 반대 쪽 끝에서 자료가 나가는 선입 선출 특성의 FIFO (First In First Out) 선형 자료구조</p>
-<p><img src="/img/cs_queue.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="Queue"
-	
-	
-></p>
-<h3 id="특징">특징</h3>
+    <h1 id="정렬">정렬</h1>
+<p>주어진 데이터를 일정한 순서로 재배열하는 알고리즘으로 이러한 재배열을 통해 검색, 비교, 출력등의 작업을 효율적으로 수행할 수 있음</p>
+<h2 id="버블-정렬-bubble-sort">버블 정렬 (Bubble Sort)</h2>
+<p><strong>개념</strong></p>
+<p>인접한 두 원소의 대소를 비교하여 순서가 잘못된 경우, 서로 교환하는 정렬 알고리즘</p>
+<p><strong>동작 방식</strong></p>
+<p>배열의 처음부터 끝까지 반복하여 인접한 두 원소의 대소를 비교해 정렬을 수행함</p>
+<p><strong>특징</strong></p>
 <ul>
-<li>선입 선출 (FIFO) 구조로 가장 먼저 추가된 데이터가 가장 먼저 제거됨</li>
-<li>스택에서 데이터 추가 및 삭제하는 연산이 다른 자료구조에 비해 빠름</li>
-<li>n번째 항목에 직접 접근 할 수 없음</li>
-<li>배열처럼 원소들을 하나씩 옆으로 밀어줄 수 없음</li>
+<li>구현이 간단하고, 코드 이해가 쉬웁</li>
+<li>소규모 데이터 정렬에 간단하게 사용하기 용이</li>
 </ul>
-<h3 id="주요-연산">주요 연산</h3>
+<p><strong>장/단점</strong></p>
 <ul>
-<li>Enqueue 연산: Queue에 데이터를 추가한다.</li>
-<li>Dequeue 연산: Queue에서 데이터를 제거한다.</li>
-<li>Peak 연산: Queue의 맨 앞에 있는 데이터를 조회한다.</li>
-<li>isEmpty 연산: Queue가 비어 있는지 여부를 확인한다.</li>
+<li>장점
+<ul>
+<li>추가적인 메모리 사용 X</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>다른 정렬 알고리즘에 비해 비효율적</li>
+</ul>
+</li>
+</ul>
+<p><strong>복잡도</strong></p>
+<ul>
+<li>시간 복잡도: O(n^2)</li>
+<li>공간 복잡도: O(1)</li>
+</ul>
+<p><strong>활용처</strong></p>
+<ul>
+<li>데이터가 이미 거의 정렬되어 있는 경우</li>
+<li>정렬할 데이터의 크기가 작을 때</li>
+</ul>
+<h2 id="삽입-정렬-insert-sort">삽입 정렬 (Insert Sort)</h2>
+<p><strong>개념</strong></p>
+<p>배열을 정렬된 부분과 정렬되지 않은 부분으로 나누어 정렬하는 알고리즘</p>
+<p><strong>동작 방식</strong></p>
+<p>두번째 Index부터 시작해 이전 index 원소들과 비교하여 적절한 위치에 삽입하면서 정렬</p>
+<p><strong>특징</strong></p>
+<p>크기가 적은 데이터나, 대부분의 데이터가 이미 정렬된 경우 효과적</p>
+<p><strong>장/단점</strong></p>
+<ul>
+<li>장점
+<ul>
+<li>추가적인 메모리 사용 X</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>데이터 양이 많거나, 정렬된 상태가 아닐 떄 효율성이 떨어짐</li>
+</ul>
+</li>
+</ul>
+<p><strong>복잡도</strong></p>
+<ul>
+<li>시간 복잡도: O(n^2) / O(n)</li>
+<li>공간 복잡도: O(n)</li>
+</ul>
+<p><strong>활용처</strong></p>
+<ul>
+<li>작은 데이터 세트를 정렬할 때 사용</li>
+<li>다른 정렬 알고리즘의 전처리 단계로 활용</li>
+</ul>
+<h2 id="선택-정렬-select-sort">선택 정렬 (Select Sort)</h2>
+<p><strong>개념</strong></p>
+<p>배열에서 최소값(또는 최대값)을 선택하여 정렬하는 알고리즘</p>
+<p><strong>동작 방식</strong></p>
+<p>아래 프로세스 반복 (n: {1 ~ n})</p>
+<ul>
+<li>n번째로 작은 데이터를 찾아 n번째 위치와 교환</li>
+</ul>
+<p><strong>특징</strong></p>
+<p>비교 횟수가 고정되어 있어, 어떤 데이터가 어떤 순서로 정렬되어 있던 비교횟수가 동일함</p>
+<p><strong>장/단점</strong></p>
+<ul>
+<li>장점
+<ul>
+<li>추가적인 메모리 사용 X</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>불안정 정렬이며, 같은 값의 순서 보장 X</li>
+</ul>
+</li>
+</ul>
+<p><strong>복잡도</strong></p>
+<ul>
+<li>시간 복잡도: O(n^2)</li>
+<li>공간 복잡도: O(1)</li>
+</ul>
+<p><strong>활용처</strong></p>
+<ul>
+<li>데이터 셋의 크기가 작은 상황에서 활용</li>
+</ul>
+<h2 id="퀵-정렬-quick-sort">퀵 정렬 (Quick Sort)</h2>
+<p><strong>개념</strong></p>
+<p>분할 정복 알고리즘을 기반으로 정렬하는 알고리즘으로, 기준점(pivot)을 기준으로 작은값은 왼쪽, 큰값은 오른쪽에 위치시키며 정렬하는 알고리즘</p>
+<p><strong>동작 방식</strong></p>
+<p>pivot을 선택하고, pivot을 기준으로 작은 것은 왼쪽, 큰 것은 오른쪽으로 위치시키며 정렬 수행</p>
+<p><strong>특징</strong></p>
+<p>평균적으로 매우 빠른 속도를 가지며, 분할 과정에서 추가적인 메모리가 필요하지 않음</p>
+<p><strong>장/단점</strong></p>
+<ul>
+<li>장점
+<ul>
+<li>매우 효율적으로 정렬을 수행함</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>선택된 pivot에 따라 성능이 불규칙함</li>
+</ul>
+</li>
+</ul>
+<p><strong>복잡도</strong></p>
+<ul>
+<li>시간 복잡도: O(nlogn) ~ O(n^2)</li>
+<li>공간 복잡도: O(logn)</li>
+</ul>
+<p><strong>활용처</strong></p>
+<ul>
+<li>대부분의 상황에서 효율적으로 사용 가능</li>
+<li>대용량 데이터 정렬</li>
+</ul>
+<h2 id="병합-정렬-merge-sort">병합 정렬 (Merge Sort)</h2>
+<p><strong>개념</strong></p>
+<p>분할 정복 알고리즘을 사용하여 정렬하는 방식으로, 배열을 반으로 나누고 각 부분을 정렬한 후 병합하는 방식으로 정렬하는 알고리즘</p>
+<p><strong>동작 방식</strong></p>
+<p>배열을 반으로 나누어 정렬된 부분 배열을 만든 후, 병합하여 전체 배열 정렬</p>
+<p><strong>특징</strong></p>
+<p>안정적인 정렬 방식이며, 재귀적인 방식으로 구현 가능</p>
+<p><strong>장/단점</strong></p>
+<ul>
+<li>장점
+<ul>
+<li>평균적으로 매우 빠른 속도를 가짐</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>추가적인 메모리 필요</li>
+</ul>
+</li>
+</ul>
+<p><strong>복잡도</strong></p>
+<ul>
+<li>시간 복잡도: O(nlogn)</li>
+<li>공간 복잡도: O(n)</li>
+</ul>
+<p><strong>활용처</strong></p>
+<ul>
+<li>대용량 데이터 정렬</li>
+</ul>
+<h2 id="힙-정렬-heap-sort">힙 정렬 (Heap Sort)</h2>
+<p><strong>개념</strong></p>
+<p>힙(Heap) 자료구조를 이용하여 정렬하는 방식으로, 힙을 구성하고 최대 힙 또느 최소 힙을 유지하면서 졍렬을 수행하는 알고리즘</p>
+<p><strong>동작 방식</strong></p>
+<p>초기에 배열을 힙으로 구성한 후, 최상단 노드를 삭제하며 정렬 수행</p>
+<p><strong>특징</strong></p>
+<p>완전 이진 트리 구조를 사용하여 효율적으로 수현하며 추가적인 메모리를 사용하지 않음</p>
+<p>최대/최소 힙</p>
+<ul>
+<li>최대 힙: 부모노드가 항상 자식 노드보다 큼 -&gt; 내림차순 정렬</li>
+<li>최소 힙: 부모노드가 항상 자식 노드보다 작음 -&gt; 오름차순 정렬</li>
+</ul>
+<p><strong>장/단점</strong></p>
+<ul>
+<li>장점
+<ul>
+<li>매우 효율적으로 정렬 수행</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>안정적인 정렬 방식이 아님</li>
+</ul>
+</li>
+</ul>
+<p><strong>복잡도</strong></p>
+<ul>
+<li>시간 복잡도: O(nlogn)</li>
+<li>공간 복잡도: O(n)</li>
+</ul>
+<p><strong>활용처</strong></p>
+<ul>
+<li>대용량 데이터 정렬</li>
+<li>우선순위 큐 구현</li>
+</ul>
+<h2 id="셸-정렬-shell-sort">셸 정렬 (Shell Sort)</h2>
+<p><strong>개념</strong></p>
+<p>삽입 정렬을 개선한 알고리즘으로, 배열을 일정한 간격으로 나누어 부분 리스트를 만들고, 각각의 부분 리스트를 삽입 정렬하는 알고리즘</p>
+<p><strong>동작 방식</strong></p>
+<p>일정한 간격(초기값: 전체 배열 길이의 반)을 설정하여 부분 리스트를 생성하고, 해당 부분 리스트를 삽입 정렬을 통해 정렬하며 간격을 줄여가면서 정렬</p>
+<p><strong>특징</strong></p>
+<p>간격에 따라 성능이 크게 달라질 수 있지만, 추가적인 메모리를 사용하지 않음</p>
+<p><strong>장/단점</strong></p>
+<ul>
+<li>장점
+<ul>
+<li>평균적으로 삽입 정렬보다 빠름</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>최적의 간격을 찾기 어려운 경우도 존재함</li>
+</ul>
+</li>
+</ul>
+<p><strong>복잡도</strong></p>
+<ul>
+<li>시간 복잡도: O(nlogn) ~ O(n^2)</li>
+<li>공간 복잡도: O(1)</li>
+</ul>
+<p><strong>활용처</strong></p>
+<ul>
+<li>대용량 데이터 정렬 시, 삽입 정렬보다 빠른 알고리즘이 필요한 경우</li>
+</ul>
+<h2 id="기수-정렬-radix-sort">기수 정렬 (Radix Sort)</h2>
+<p><strong>개념</strong></p>
+<p>자릿수를 기준으로 정렬하는 알고리즘으로 LSD (가장 작은 자리수) 또는 MSD (가장 높은 수) 방식을 통해 정렬하는 알고리즘</p>
+<p><strong>동작 방식 (LSD)</strong></p>
+<p>가장 낮은 자리수부터 시작하여 정렬을 수행, 각 자리수별로 정렬
+(일의 자리부터 시작해, 가장 높은 자리까지 정렬)</p>
+<p><strong>특징</strong></p>
+<p>안정적인 정렬 알고리즘이지만, 데이터 자리수가 큰 경우 공간 복잡도가 커질 수 있음</p>
+<p><strong>장/단점</strong></p>
+<ul>
+<li>장점
+<ul>
+<li>안정적인 정렬 방식</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>일부 자리수가 없는 경우 사용 불가</li>
+</ul>
+</li>
+</ul>
+<p><strong>복잡도</strong></p>
+<ul>
+<li>시간 복잡도: O(d*(n+k)) (d: 최대 자리수, k: 각 자리수 범위)</li>
+<li>공간 복잡도: O(n + k): (k: 각 자리수 볌위)</li>
+</ul>
+<p><strong>활용처</strong></p>
+<ul>
+<li>특정 자리수를 기준으로 정렬 (ex. 정수, 문자열)</li>
 </ul>
 <hr>
-<h3 id="장점">장점</h3>
+<h1 id="안정-정렬-vs-불안정-정렬">안정 정렬 vs 불안정 정렬</h1>
 <ul>
-<li>자료 구조가 단순하여 구현이 쉬움</li>
-<li>데이터 저장/읽기 속도가 빠름</li>
+<li>
+<p>안정 정렬</p>
+<ul>
+<li>중복된 값이 입력 순서와 동일하게 정렬되는 알고리즘의 특성</li>
+<li>ex) 삽입 정렬, 벙합 정렬, 버블 정렬</li>
 </ul>
-<h3 id="단점">단점</h3>
+</li>
+<li>
+<p>불안정 정렬</p>
 <ul>
-<li>데이터의 최대 개수가 사전에 정의되어야 함</li>
-<li>저장공간 낭비로 이어질 수 있음</li>
-<li>원하는 데이터에 직접 접근하기 어려움</li>
+<li>중복된 값이 이력 순서와 동일하지 않게 정렬되는 알고리즘의 특성</li>
+<li>ex) 쿽 정렬, 선택 정렬, 계수 정렬</li>
 </ul>
-<h3 id="복잡도">복잡도</h3>
-<ul>
-<li>삽입/삭제: O(1)</li>
-</ul>
-<h3 id="활용">활용</h3>
-<ul>
-<li>작업 대기열</li>
-<li>네트워크 패킷 처리</li>
-<li>너비 우선 탐색 (BFS)</li>
-<li>캐시 관리</li>
+</li>
 </ul>
 
 </section>
@@ -415,7 +650,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/data-structure/">Data Structure</a>
+            <a href="/tags/algorithm/">Algorithm</a>
         
             <a href="/tags/computer-science/">Computer Science</a>
         
@@ -465,12 +700,12 @@
             
                 
 <article class="">
-    <a href="/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-stack-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/">
+    <a href="/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">[자료구조] Stack 개념 정리</h2>
+            <h2 class="article-title">[자료구조] Queue 개념 정리</h2>
         </div>
     </a>
 </article>
@@ -478,12 +713,12 @@
             
                 
 <article class="">
-    <a href="/p/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-sort-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">
+    <a href="/p/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-stack-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">[알고리즘] Sort 알고리즘</h2>
+            <h2 class="article-title">[자료구조] Stack 개념 정리</h2>
         </div>
     </a>
 </article>
