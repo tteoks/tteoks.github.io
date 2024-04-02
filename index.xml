@@ -7,7 +7,92 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>COPYRIGHT (C) JINHO,YU. ALL RIGHTS RESERVED.</copyright>
-        <lastBuildDate>Sun, 11 Feb 2024 14:24:19 +0900</lastBuildDate><atom:link href="https://tteoks.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 11 Feb 2024 17:15:42 +0900</lastBuildDate><atom:link href="https://tteoks.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[알고리즘] Searching 알고리즘</title>
+        <link>https://tteoks.github.io/p/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-searching-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</link>
+        <pubDate>Sun, 11 Feb 2024 17:15:42 +0900</pubDate>
+        
+        <guid>https://tteoks.github.io/p/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-searching-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</guid>
+        <description>&lt;h1 id=&#34;탐색-알고리즘-common-searching-algorithms&#34;&gt;탐색 알고리즘 (Common Searching Algorithms)&lt;/h1&gt;
+&lt;p&gt;탐색 알고리즘은 주어진 데이터 구조에서 구하고자 하는 값이 존재하는지 확인하는 알고리즘이다.&lt;/p&gt;
+&lt;p&gt;탐색 알고리즘은 크게 아래 2가지로 구분 할 수 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sequenctial Search
+&lt;ul&gt;
+&lt;li&gt;주어진 배열, 리스트와 같 데이터 구조에서 순차적으로 데이터를 탐색&lt;/li&gt;
+&lt;li&gt;대표 알고리즘: Linear Search&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Interval Search:
+&lt;ul&gt;
+&lt;li&gt;정렬된 데이터에서 원하는 데이터를 효율적으로 탐색&lt;/li&gt;
+&lt;li&gt;대표 알고리즘: Binary Search&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;선형-탐색-알고리즘-linear-search-algorithm&#34;&gt;선형 탐색 알고리즘 (Linear Search Algorithm)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;개념&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;주어진 리스트에서 원하는 항목을 순차적으로 검색/탐색 하는 간단한 알고리즘&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;동작 방식&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;주어진 리스트의 각 요소를 처음부터 순차적으로 검색하여 찾고자 하는 항목을 발견할 떄까지 반복&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;특징&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;리스트 요소들을 하나씩 순차적으로 검색
+데이터의 정렬 여부에 관계 없이 사용 가능&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;장/단점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;장점
+&lt;ul&gt;
+&lt;li&gt;구현이 간단하고 이해가 쉬움&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;단점
+&lt;ul&gt;
+&lt;li&gt;전체 리스트 숱회로 인한 성능 저하&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;복잡도&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;시간 복잡도: O(n)&lt;/li&gt;
+&lt;li&gt;공간 복잡도: O(1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;활용처&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터가 정렬되어 있지 않은 경우&lt;/li&gt;
+&lt;li&gt;탐색 대상이 리스트에 고르게 분포된 경우&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;이진-탐색-알고리즘-binarh-search-algorithm&#34;&gt;이진 탐색 알고리즘 (Binarh Search Algorithm)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;개념&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;정렬된 리스트에서 특정 항목을 찾는 탐색 알고리즘으로, 리스트를 반으로 나누어 탐색 범위를 줄여나가면서 탐색하는 알고리즘&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;동작 방식&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;중앙에 위치한 값을 기준으로 Key보다 작은 값은 왼쪽에서, 큰 값은 오른쪽을 탐색함으로써 중앙값과 key값이 같을 때까지 탐색&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;특징&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;리스트가 정렬되어야 사용 가능한 알고리즘&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;장/단점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;장점
+&lt;ul&gt;
+&lt;li&gt;평균적으로 매우 빠른 탐색 속도를 가짐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;단점
+&lt;ul&gt;
+&lt;li&gt;데이터가 정렬되어 있어야 사용 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;복잡도&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;시간 복잡도: O(nlogn)&lt;/li&gt;
+&lt;li&gt;공간 복잡도: O(1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;활용처&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터가 정렬되어 있는 상황에서 데이터를 탐색해야 하는 경우&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>[알고리즘] Sort 알고리즘</title>
         <link>https://tteoks.github.io/p/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-sort-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</link>
         <pubDate>Sun, 11 Feb 2024 14:24:19 +0900</pubDate>
